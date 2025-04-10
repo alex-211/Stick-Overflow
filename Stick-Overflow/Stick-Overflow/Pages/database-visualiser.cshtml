@@ -1,0 +1,88 @@
+﻿@page
+@model Stick_Overflow.Pages.database_visualiserModel
+@{
+}
+@using Microsoft.Data.SqlClient;
+
+<body>
+    <h1>Visualizza l'interno database</h1>
+    <br />
+    <h2>Tabella utente</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nickname</th>
+                <th>Password</th>
+                <th>eMail</th>
+                <th>Abilitato</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{
+                const string connData0 = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" +
+                "|DataDirectory|\\forum.mdf;Integrated Security=True";
+
+                using (SqlConnection conn = new SqlConnection(connData0))
+                {
+                    string query = "SELECT u_Id, u_nickname, u_password, u_email, u_abilitato FROM utente";
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                <tr>
+                                    <td>@reader[0]</td>
+                                    <td>@reader[1]</td>
+                                    <td>@reader[2]</td>
+                                    <td>@reader[3]</td>
+                                    <td>@reader[4]</td>
+                                </tr>
+                            }
+                        }
+                    }
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <h2>Tabella amministratore</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{
+                const string connData1 = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" +
+                "|DataDirectory|\\forum.mdf;Integrated Security=True";
+
+                using (SqlConnection conn = new SqlConnection(connData1))
+                {
+                    string query = "SELECT u_Id FROM amministratore";
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                <tr>
+                                    <td>@reader[0]</td>
+                                </tr>
+                            }
+                        }
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</body>
