@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.DataProtection.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
+using Microsoft.Net.Http.Headers;
 
 namespace Stick_Overflow.Pages
 {
@@ -12,7 +14,8 @@ namespace Stick_Overflow.Pages
         public string messaggio;
 
         [BindProperty]
-        public string password_conf { get; set; } // non ne sono sicuro da rivedere
+        public string password_conf { get; set; } // non ne sono sicuro da rivedere // update: sembra funzionare
+
         public void OnPost()
         {
             if (!ModelState.IsValid)
@@ -23,14 +26,20 @@ namespace Stick_Overflow.Pages
 
             try
             {
+                if (usr.password != password_conf)
+                {
+                    messaggio = "Le due password non combaciano";
+                    return;
+                }
                 const string connData = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + "|DataDirectory|\\forum.mdf;Integrated Security=True";
                 using (SqlConnection conn = new SqlConnection(connData))
                 {
-                    string query = "SELECT MAX id FROM utente";
+                    conn.Open();
+                    string query = "SELECT MAX(u_Id) FROM utente";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        object ris = cmd.ExecuteNonQuery;
-                        if (ris == null)
+                        object ris = cmd.ExecuteScalar();
+                        if (ris == DBNull.Value || ris == null)
                         {
                             usr.Id = 1;
                         }
@@ -40,18 +49,28 @@ namespace Stick_Overflow.Pages
                         }
                     }
 
-                    string insertQuery = "INSERT INTO utente VALUES ()";
+                    string insertQuery = "INSERT INTO utente (u_Id, u_nickname, u_password, u_email, u_abilitato) VALUES ('" + usr.Id + "', '" + usr.name + "', '" + usr.password + "', '" + usr.email + "', 1)";
                     using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
                     {
-                        object ris = cmd.ExecuteNonQuery;
-                        messaggio = "Signup completato, ora è possibile loggarsi";
-                        // redirect to login page or directly atore user's id in sessione storage
+                        object ris = cmd.ExecuteNonQuery();
+                        CookieOptions cookie = new CookieOptions();
+                        cookie.Expires = DateTime.Now.AddDays(60);
+                        Response.Cookies.Append("logged-in-id", Convert.ToString(usr.Id), cookie);
+
+                        if (Request.IsHttps)
+                        {
+                            Response.Redirect("https://localhost:5033/index");
+                        }
+                        else
+                        {
+                            Response.Redirect("http://localhost:5033/index");
+                        }
                     }
                 }
             }
             catch (SqlException ex)
             {
-                messaggio = "cacca" + ex;
+                messaggio = "cacca nel puzzo: " + ex;
             }
         }
     }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stick-Overflow")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d45d126616abaf0dd6038be5bc1ce2990cb4a619")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+638d1412bba60e65b834cc0f5f2efbea03034b40")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stick-Overflow")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stick-Overflow")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
