@@ -1,0 +1,26 @@
+﻿@page
+@model Stick_Overflow.Pages.signupModel
+@{
+}
+<body>
+    <form method="post">
+        <label>Scegli un nickname</label>
+        <input type="text" asp-for="usr.name" class="form-control" required />
+        <p><span asp-validation-for="usr.name" class="text-danger"></span></p>
+
+        <label>Inserisci la tua email</label>
+        <input type="text" asp-for="usr.email" class="form-control" required />
+        <p><span asp-validation-for="usr.email" class="text-danger"></span></p>
+
+        <label>Scegli una password</label>
+        <input type="password" asp-for="usr.password" class="form-control" required />
+        <p><span asp-validation-for="usr.password" class="text-danger"></span></p>
+
+        <label>Conferma la password</label>
+        <input type="password" asp-for="password_conf" class="form-control" required />
+        <p><span asp-validation-for="password_conf" class="text-danger"></span></p>
+
+        <button type="submit" class="btn btn-primary">Inserisci</button>
+    </form>
+    <p>@Model.messaggio</p>
+</body>

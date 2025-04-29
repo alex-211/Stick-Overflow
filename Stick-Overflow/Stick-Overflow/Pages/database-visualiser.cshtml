@@ -21,10 +21,10 @@
 
         <tbody>
             @{
-                const string connData0 = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" +
+                const string connData = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" +
                 "|DataDirectory|\\forum.mdf;Integrated Security=True";
 
-                using (SqlConnection conn = new SqlConnection(connData0))
+                using (SqlConnection conn = new SqlConnection(connData))
                 {
                     string query = "SELECT u_Id, u_nickname, u_password, u_email, u_abilitato FROM utente";
                     conn.Open();
@@ -61,10 +61,7 @@
 
         <tbody>
             @{
-                const string connData1 = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" +
-                "|DataDirectory|\\forum.mdf;Integrated Security=True";
-
-                using (SqlConnection conn = new SqlConnection(connData1))
+                using (SqlConnection conn = new SqlConnection(connData))
                 {
                     string query = "SELECT u_Id FROM amministratore";
                     conn.Open();
@@ -77,6 +74,123 @@
                             {
                                 <tr>
                                     <td>@reader[0]</td>
+                                </tr>
+                            }
+                        }
+                    }
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <h2>Tabella Forum</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titolo</th>
+                <th>Descrizione</th>
+                <th>Amministrato da</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{
+                using (SqlConnection conn = new SqlConnection(connData))
+                {
+                    string query = "SELECT f_Id, f_titolo, f_desc, u_Id FROM forum";
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                <tr>
+                                    <td>@reader[0]</td>
+                                    <td>@reader[1]</td>
+                                    <td>@reader[2]</td>
+                                    <td>@reader[3]</td>
+                                </tr>
+                            }
+                        }
+                    }
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <h2>Tabella discurssione</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titolo</th>
+                <th>Descrizione</th>
+                <th>Proprietario</th>
+                <th>Forum appartenenza</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                using (SqlConnection conn = new SqlConnection(connData))
+                {
+                    string query = "SELECT d_Id, d_titolo, d_desc, u_Id, f_Id FROM discussione";
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                <tr>
+                                    <td>@reader[0]</td>
+                                    <td>@reader[1]</td>
+                                    <td>@reader[2]</td>
+                                    <td>@reader[3]</td>
+                                    <td>@reader[4]</td>
+                                </tr>
+                            }
+                        }
+                    }
+                }
+            }
+        </tbody>
+    </table>
+    <br />
+    <h2>Tabella messaggio</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titolo</th>
+                <th>Testo</th>
+                <th>Data</th>
+                <th>Autore</th>
+                <th>Discussione</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                using (SqlConnection conn = new SqlConnection(connData))
+                {
+                    string query = "SELECT m_Id, m_titolo, m_testo, m_data, u_Id, d_Id FROM messaggio";
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                <tr>
+                                    <td>@reader[0]</td>
+                                    <td>@reader[1]</td>
+                                    <td>@reader[2]</td>
+                                    <td>@reader[3]</td>
+                                    <td>@reader[4]</td>
                                 </tr>
                             }
                         }
