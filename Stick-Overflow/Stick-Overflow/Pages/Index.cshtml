@@ -2,8 +2,21 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    // this does not work great
+    string cacca = Request.Cookies["logged-in-id"];
 }
 
 <div class="text-center">
     <h1 class="display-4">Benvenut* su Stick Overflow!</h1>
 </div>
+
+@{
+    if (cacca != null)
+    {
+        <p>currently logged in cunt is: @cacca</p>
+    }
+    else
+    {
+        <p>no one is logged in ffs</p>
+    }
+}
