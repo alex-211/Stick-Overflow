@@ -1,0 +1,19 @@
+﻿@page
+@model Stick_Overflow.Pages.loginModel
+@{
+}
+
+<body>
+	<form method="post">
+		<label>Nickname o email</label>
+		<input type="text" asp-for="loginParam" class="form-control" required />
+		<p><span asp-validation-for="loginParam" class="text-danger"></span></p>
+
+		<label>Password</label>
+		<input type="text" asp-for="pswd" class="form-control" required />
+		<p><span asp-validation-for="pswd" class="text-danger"></span></p>
+
+		<button type="submit" class="btn btn-primary">Inserisci</button>
+	</form>
+	<span>@Model.messaggio</span>
+</body>

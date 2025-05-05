@@ -2,17 +2,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
 
-namespace Stick_Overflow.Pages.Shared
+namespace Stick_Overflow.Pages
 {
     public class loginModel : PageModel
     {
+        [BindProperty]
+        public string pswd { get; set; }
 
         [BindProperty]
-        public User usr { get; set; }
-        
-        [BindProperty]
         public string loginParam { get; set; }
-        
+
         public string messaggio;
         public void OnPost()
         {
@@ -22,15 +21,6 @@ namespace Stick_Overflow.Pages.Shared
                 return;
             }
 
-            if (loginParam.Contains("@"))
-            {
-                usr.email = loginParam;
-            }
-            else
-            {
-                usr.name = loginParam;
-            }
-
             try
             {
                 const string connData = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + "|DataDirectory|\\forum.mdf;Integrated Security=True";
@@ -38,15 +28,15 @@ namespace Stick_Overflow.Pages.Shared
                 {
                     conn.Open();
                     string query = " ";
-                    if (usr.email == null)
+                    if (!loginParam.Contains("@"))
                     {
                         // query che contiene nickname
-                        query = "SELECT u_Id FROM utente WHERE u_nickname = '" + usr.name + "' AND u_password = '" + usr.password + "'";
+                        query = "SELECT u_Id FROM utente WHERE u_nickname = '" + loginParam + "' AND u_password = '" + pswd + "'";
                     }
                     else
                     {
                         // contiene email
-                        query = "SELECT u_Id FROM utente WHERE u_email = '" + usr.email + "' AND u_password = '" + usr.password + "'";
+                        query = "SELECT u_Id FROM utente WHERE u_email = '" + loginParam + "' AND u_password = '" + pswd + "'";
                     }
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -81,3 +71,4 @@ namespace Stick_Overflow.Pages.Shared
         }
     }
 }
+

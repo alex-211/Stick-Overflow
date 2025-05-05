@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Home page";
     // this does not work great
-    string cacca = Request.Cookies["logged-in-id"];
+    string usrId = Request.Cookies["logged-in-id"];
 }
 
 <div class="text-center">
@@ -11,9 +11,10 @@
 </div>
 
 @{
-    if (cacca != null)
+    if (usrId != null)
     {
-        <p>currently logged in cunt is: @cacca</p>
+        <p>currently logged in cunt is: @usrId</p>
+        <a asp-page="logout" class="btn btn-outline-danger">logout</a>
     }
     else
     {
