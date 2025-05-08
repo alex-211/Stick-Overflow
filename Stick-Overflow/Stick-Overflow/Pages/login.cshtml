@@ -13,6 +13,9 @@
 		<input type="text" asp-for="pswd" class="form-control" required />
 		<p><span asp-validation-for="pswd" class="text-danger"></span></p>
 
+		<label>Ricordami</label>
+		<input type="checkbox" asp-for="rememberUser"/>
+
 		<button type="submit" class="btn btn-primary">Inserisci</button>
 	</form>
 	<span>@Model.messaggio</span>

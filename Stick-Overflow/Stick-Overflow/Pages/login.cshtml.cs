@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
@@ -11,6 +12,9 @@ namespace Stick_Overflow.Pages
 
         [BindProperty]
         public string loginParam { get; set; }
+
+        [BindProperty]
+        public bool rememberUser { get; set; }
 
         public string messaggio;
         public void OnPost()
@@ -31,35 +35,38 @@ namespace Stick_Overflow.Pages
                     if (!loginParam.Contains("@"))
                     {
                         // query che contiene nickname
-                        query = "SELECT u_Id FROM utente WHERE u_nickname = '" + loginParam + "' AND u_password = '" + pswd + "'";
+                        query = "SELECT u_Id FROM utente WHERE u_nickname = @loginParam AND u_password = @password AND u_abilitato = 1";
                     }
                     else
                     {
                         // contiene email
-                        query = "SELECT u_Id FROM utente WHERE u_email = '" + loginParam + "' AND u_password = '" + pswd + "'";
+                        query = "SELECT u_Id FROM utente WHERE u_email = @loginParam AND u_password = @password AND u_abilitato = 1";
                     }
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@loginParam", loginParam);
+                        cmd.Parameters.AddWithValue("@password", pswd);
+
                         object ris = cmd.ExecuteScalar();
-                        if (ris == DBNull.Value || ris == null)
+                        if (ris == null)
                         {
                             messaggio = "cacca non posso loggarmi";
                             return;
                         }
                         else
                         {
-                            CookieOptions cookie = new CookieOptions();
-                            cookie.Expires = DateTime.Now.AddDays(60);
-                            Response.Cookies.Append("logged-in-id", Convert.ToString(ris), cookie);
-
-                            if (Request.IsHttps)
+                            if (rememberUser == true)
                             {
-                                Response.Redirect("https://localhost:5033/index");
+                                CookieOptions cookie = new CookieOptions();
+                                cookie.Expires = DateTime.Now.AddDays(30);
+                                Response.Cookies.Append("logged-in-id", Convert.ToString(ris), cookie);
                             }
                             else
                             {
-                                Response.Redirect("http://localhost:5033/index");
+                                HttpContext.Session.SetString("user-id", Convert.ToString(ris));
                             }
+
+                            Response.Redirect("/index");
                         }
                     }
                 }
