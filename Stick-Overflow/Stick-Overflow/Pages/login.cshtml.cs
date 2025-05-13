@@ -66,7 +66,7 @@ namespace Stick_Overflow.Pages
                                 HttpContext.Session.SetString("user-id", Convert.ToString(ris));
                             }
 
-                            Response.Redirect("/index");
+                            Response.Redirect("redirectBuffer?target=index");
                         }
                     }
                 }

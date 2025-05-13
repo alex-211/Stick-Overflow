@@ -1,0 +1,24 @@
+﻿@page
+@model Stick_Overflow.Pages.redirectBufferModel
+@{
+}
+@{
+    string target = Request.Query["target"];
+    string error = Request.Query["error"];
+
+    if (error != null)
+    {
+        <p>@error</p>
+        return;
+    }
+
+    if (target != null)
+    {
+        Response.Redirect(target);
+    }
+
+    if (target == null && error == null)
+    {
+        Response.Redirect("index");
+    }
+}

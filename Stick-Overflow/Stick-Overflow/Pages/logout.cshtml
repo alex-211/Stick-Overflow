@@ -1,5 +1,15 @@
 ﻿@page
 @model Stick_Overflow.Pages.logoutModel
-@{
+@{    
+    Response.Cookies.Delete("user-id");
+    HttpContext.Session.Clear();
+
+    if (HttpContext.Session.GetString("user-id") == null && Request.Cookies["logged-in-id"] == null)
+    {
+        Response.Redirect("index");
+    }
+    else
+    {
+        <p>errore nel logout</p>
+    }
 }
-generic error

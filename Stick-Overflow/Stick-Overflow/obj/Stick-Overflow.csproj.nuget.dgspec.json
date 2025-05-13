@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow.csproj": {}
+    "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow.csproj": {
+    "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow.csproj",
+        "projectUniqueName": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow.csproj",
         "projectName": "Stick-Overflow",
-        "projectPath": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow.csproj",
-        "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\obj\\",
+        "projectPath": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow.csproj",
+        "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

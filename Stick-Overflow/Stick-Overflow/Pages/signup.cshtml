@@ -20,6 +20,9 @@
         <input type="password" asp-for="password_conf" class="form-control" required />
         <p><span asp-validation-for="password_conf" class="text-danger"></span></p>
 
+        <label>Rimani loggato</label>
+        <input type="checkbox" asp-for="rememberUser" />
+
         <button type="submit" class="btn btn-primary">Inserisci</button>
     </form>
     <p>@Model.messaggio</p>

@@ -16,6 +16,9 @@ namespace Stick_Overflow.Pages
         [BindProperty]
         public string password_conf { get; set; } // non ne sono sicuro da rivedere // update: sembra funzionare
 
+        [BindProperty]
+        public bool rememberUser { get; set; }
+
         public void OnPost()
         {
             if (!ModelState.IsValid)
@@ -49,22 +52,37 @@ namespace Stick_Overflow.Pages
                         }
                     }
 
-                    string insertQuery = "INSERT INTO utente (u_Id, u_nickname, u_password, u_email, u_abilitato) VALUES ('" + usr.Id + "', '" + usr.name + "', '" + usr.password + "', '" + usr.email + "', 1)";
+                    string queryCheck = "SELECT u_id FROM utente WHERE u_nickname = @nickname OR u_email = @email";
+                    using (SqlCommand cmdCheck = new SqlCommand(queryCheck, conn))
+                    {
+                        cmdCheck.Parameters.AddWithValue("@nickname", usr.name);
+                        cmdCheck.Parameters.AddWithValue("@email", usr.email);
+                        object ris = cmdCheck.ExecuteScalar;
+                        if (ris != null)
+                        {
+                            messaggio = "username / password già in uso";
+                        }
+                    }
+                    string insertQuery = "INSERT INTO utente (u_Id, u_nickname, u_password, u_email, u_abilitato) VALUES (@id, @name, @pswd, @email 1)";
                     using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
                     {
+                        cmd.Parameters.AddWithValue("@id", usr.Id);
+                        cmd.Parameters.AddWithValue("@name", usr.name);
+                        cmd.Parameters.AddWithValue("@pswd", usr.password);
+                        cmd.Parameters.AddWithValue("@email", usr.email);
                         object ris = cmd.ExecuteNonQuery();
-                        CookieOptions cookie = new CookieOptions();
-                        cookie.Expires = DateTime.Now.AddDays(60);
-                        Response.Cookies.Append("logged-in-id", Convert.ToString(usr.Id), cookie);
-
-                        if (Request.IsHttps)
+                        if (rememberUser == true)
                         {
-                            Response.Redirect("https://localhost:5033/index");
+                            CookieOptions cookie = new CookieOptions();
+                            cookie.Expires = DateTime.Now.AddDays(60);
+                            Response.Cookies.Append("logged-in-id", Convert.ToString(usr.Id), cookie);
                         }
                         else
                         {
-                            Response.Redirect("http://localhost:5033/index");
+                            HttpContext.Session.SetString("user-id", Convert.ToString(ris));
                         }
+
+                        Response.Redirect("redirectBuffer?target=index");
                     }
                 }
             }

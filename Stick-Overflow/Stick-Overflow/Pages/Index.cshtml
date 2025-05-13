@@ -4,6 +4,11 @@
     ViewData["Title"] = "Home page";
     // this does not work great
     string usrId = Request.Cookies["logged-in-id"];
+
+    if (usrId == null)
+    {
+        usrId = HttpContext.Session.GetString("user-id"); 
+    }
 }
 
 <div class="text-center">

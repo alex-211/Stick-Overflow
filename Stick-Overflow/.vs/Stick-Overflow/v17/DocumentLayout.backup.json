@@ -1,29 +1,40 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\",
+  "WorkspaceRootPath": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\utente\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\utente\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\utente\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\aless\\onedrive\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\pages\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\utente\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\pages\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\utente\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\aless\\onedrive\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\utente\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\aless\\onedrive\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\pages\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\aless\\onedrive\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\signup.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\pages\\signup.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\aless\\onedrive\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\aless\\onedrive\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_ALESS_ONEDRIVE_DESKTOP_REPOS_STICK_OVERFLOW_STICK_OVERFLOW_STICK_OVERFLOW_BIN_DEBUG_NET8.0_FORUM.MDF/True/SqlTable/dbo.utente.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\aless\\onedrive\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\redirectbuffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\pages\\redirectbuffer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|c:\\users\\aless\\onedrive\\desktop\\repos\\stick-overflow\\stick-overflow\\stick-overflow\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{525F71ED-4884-492B-9725-C40AF20EA443}|Stick-Overflow\\Stick-Overflow.csproj|solutionrelative:stick-overflow\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -34,19 +45,81 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "logout.cshtml",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\logout.cshtml",
+              "RelativeDocumentMoniker": "Stick-Overflow\\Pages\\logout.cshtml",
+              "ToolTip": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\logout.cshtml",
+              "RelativeToolTip": "Stick-Overflow\\Pages\\logout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-13T09:39:53.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dbo.utente [Dati]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_ALESS_ONEDRIVE_DESKTOP_REPOS_STICK_OVERFLOW_STICK_OVERFLOW_STICK_OVERFLOW_BIN_DEBUG_NET8.0_FORUM.MDF/True/SqlTable/dbo.utente.sql",
+              "ToolTip": "dbo.utente [Dati]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-13T09:15:50.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "redirectBuffer.cshtml",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\redirectBuffer.cshtml",
+              "RelativeDocumentMoniker": "Stick-Overflow\\Pages\\redirectBuffer.cshtml",
+              "ToolTip": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\redirectBuffer.cshtml",
+              "RelativeToolTip": "Stick-Overflow\\Pages\\redirectBuffer.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-13T08:53:34.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "signup.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\signup.cshtml.cs",
+              "RelativeDocumentMoniker": "Stick-Overflow\\Pages\\signup.cshtml.cs",
+              "ToolTip": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\signup.cshtml.cs",
+              "RelativeToolTip": "Stick-Overflow\\Pages\\signup.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T08:49:53.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "signup.cshtml",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\signup.cshtml",
+              "RelativeDocumentMoniker": "Stick-Overflow\\Pages\\signup.cshtml",
+              "ToolTip": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\signup.cshtml",
+              "RelativeToolTip": "Stick-Overflow\\Pages\\signup.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-13T08:50:23.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Program.cs",
               "RelativeDocumentMoniker": "Stick-Overflow\\Program.cs",
-              "ToolTip": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Program.cs",
+              "ToolTip": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Program.cs",
               "RelativeToolTip": "Stick-Overflow\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -55,65 +128,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "logout.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\logout.cshtml.cs",
-              "RelativeDocumentMoniker": "Stick-Overflow\\Pages\\logout.cshtml.cs",
-              "ToolTip": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\logout.cshtml.cs",
-              "RelativeToolTip": "Stick-Overflow\\Pages\\logout.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T07:03:05.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "logout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\logout.cshtml",
-              "RelativeDocumentMoniker": "Stick-Overflow\\Pages\\logout.cshtml",
-              "ToolTip": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\logout.cshtml",
-              "RelativeToolTip": "Stick-Overflow\\Pages\\logout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-05T07:01:05.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "Stick-Overflow\\Pages\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\Index.cshtml",
               "RelativeToolTip": "Stick-Overflow\\Pages\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-05T06:58:23.098Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "login.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\login.cshtml.cs",
               "RelativeDocumentMoniker": "Stick-Overflow\\Pages\\login.cshtml.cs",
-              "ToolTip": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\login.cshtml.cs",
+              "ToolTip": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\login.cshtml.cs",
               "RelativeToolTip": "Stick-Overflow\\Pages\\login.cshtml.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAIwC4AAABPAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwEEAAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T06:35:35.191Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\login.cshtml",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\login.cshtml",
               "RelativeDocumentMoniker": "Stick-Overflow\\Pages\\login.cshtml",
-              "ToolTip": "C:\\Users\\Utente\\Desktop\\repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\login.cshtml",
+              "ToolTip": "C:\\Users\\aless\\OneDrive\\Desktop\\Repos\\Stick-Overflow\\Stick-Overflow\\Stick-Overflow\\Pages\\login.cshtml",
               "RelativeToolTip": "Stick-Overflow\\Pages\\login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-05T06:35:05.623Z",
               "EditorCaption": ""
