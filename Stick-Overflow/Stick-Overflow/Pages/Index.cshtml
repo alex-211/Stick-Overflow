@@ -1,28 +1,12 @@
 ﻿@page
 @model IndexModel
+@using Microsoft.Data.SqlClient;
 @{
     ViewData["Title"] = "Home page";
     // this does not work great
-    string usrId = Request.Cookies["logged-in-id"];
-
-    if (usrId == null)
-    {
-        usrId = HttpContext.Session.GetString("user-id"); 
-    }
 }
 
-<div class="text-center">
+<div>
     <h1 class="display-4">Benvenut* su Stick Overflow!</h1>
 </div>
-
-@{
-    if (usrId != null)
-    {
-        <p>currently logged in cunt is: @usrId</p>
-        <a asp-page="logout" class="btn btn-outline-danger">logout</a>
-    }
-    else
-    {
-        <p>no one is logged in ffs</p>
-    }
-}
+// qui si vedranno una lista dei forum, discussioni con + messaggi dell'ultimo mese e messaggi delle ultime 24h 

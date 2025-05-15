@@ -57,13 +57,13 @@ namespace Stick_Overflow.Pages
                     {
                         cmdCheck.Parameters.AddWithValue("@nickname", usr.name);
                         cmdCheck.Parameters.AddWithValue("@email", usr.email);
-                        object ris = cmdCheck.ExecuteScalar;
+                        object ris = cmdCheck.ExecuteScalar();
                         if (ris != null)
                         {
-                            messaggio = "username / password già in uso";
+                            messaggio = "username / email già in uso";
                         }
                     }
-                    string insertQuery = "INSERT INTO utente (u_Id, u_nickname, u_password, u_email, u_abilitato) VALUES (@id, @name, @pswd, @email 1)";
+                    string insertQuery = "INSERT INTO utente (u_Id, u_nickname, u_password, u_email, u_abilitato) VALUES (@id, @name, @pswd, @email, 1)";
                     using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", usr.Id);

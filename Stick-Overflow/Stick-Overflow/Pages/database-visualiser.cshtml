@@ -1,11 +1,18 @@
 ﻿@page
 @model Stick_Overflow.Pages.database_visualiserModel
 @{
+    // string id = HttpContext.Request.Cookies["logged-in-id"] ?? HttpContext.Session.GetString("user-id");
+
+    // commonMethods cm = new commonMethods();
+    // if (!cm.isAdmin(id))
+    // {
+    //     return;
+    // }
 }
 @using Microsoft.Data.SqlClient;
 
 <body>
-    <h1>Visualizza l'interno database</h1>
+    <h1>Visualizza l'intero database</h1>
     <br />
     <h2>Tabella utente</h2>
     <table border="1">

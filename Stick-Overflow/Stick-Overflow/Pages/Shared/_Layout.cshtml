@@ -1,11 +1,15 @@
 ﻿@{
+    commonMethods cm = new commonMethods();
+    // who is logged method
+    string id = Context.Request.Cookies["logged-in-id"] ?? Context.Session.GetString("user-id");
+    bool isLogged = !string.IsNullOrEmpty(id);
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Stick_Overflow</title>
+    <title>@ViewData["Title"] - Stick Overflow</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Stick_Overflow.styles.css" asp-append-version="true" />
@@ -14,9 +18,9 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Stick_Overflow</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Stick Overflow</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -25,11 +29,41 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/wip">Cerca</a>
                         </li>
+                        @{
+                            if (isLogged)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/wip">Crea Discussione</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/wip">Profilo</a>
+                                </li>
+                                if (cm.isAdmin(id))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-page="/database-visualiser">Amministrazione</a>
+                                    </li>
+                                }
+                            }
+                        }
                     </ul>
                 </div>
-            </div>
+                @{
+                    if (!isLogged)
+                    {
+                        <a asp-page="/login" class="btn btn-primary me-2">Login</a>
+                        <a asp-page="/signup" class="btn btn-primary">Signup</a>
+                    }
+                    else
+                    {
+                        string name = Convert.ToString(cm.getUserDetails(id)[0]);
+                        <span class="me-2">Benvenuto, @name</span>
+                        <a asp-page="/logout" class="btn btn-outline-danger">Logout</a>
+
+                    }
+                }
         </nav>
     </header>
     <div class="container">

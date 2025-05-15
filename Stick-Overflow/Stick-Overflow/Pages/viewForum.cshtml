@@ -1,0 +1,55 @@
+﻿@page
+@using Microsoft.Data.SqlClient;
+@model Stick_Overflow.Pages.viewForumModel
+@{
+    string forum = Request.Query["forum"];
+    string titolo = "";
+    string desc = "";
+    const string connData = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + "|DataDirectory|\\forum.mdf;Integrated Security=True";
+    using (SqlConnection conn = new SqlConnection(connData))
+    {
+        conn.Open();
+        const string query = "SELECT f_titolo, f_desc FROM forum WHERE f_id = @id";
+        using (SqlCommand cmd = new SqlCommand(query, conn))
+        {
+            cmd.Parameters.AddWithValue("@id", forum);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    titolo = reader[0].ToString();
+                    desc = reader[1].ToString();
+                }
+            }
+        }
+    }
+}
+<body>
+    <h2 class="display-4">@titolo</h2>
+    <h8 class="display-4">@desc</h8>
+    <hr />
+
+    @{
+
+        using (SqlConnection conn = new SqlConnection(connData))
+        {
+            conn.Open();
+            string query = "SELECT d.d_titolo, d.d_desc, u.u_nickname, d.d_Id FROM discussione AS d, utente AS u WHERE d.f_Id = @forum AND d.u_Id = u.u_Id";
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@forum", forum);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        <div>
+                            <h5><a href="/viewDisc?disc=@reader[3]">@reader[0]</a></h5>
+                            <p>@reader[1]</p>
+                            <p>Autore: @reader[2]</p>
+                        </div>
+                    }
+                }
+            }
+        }
+    }
+</body>
