@@ -3,6 +3,7 @@
 @model Stick_Overflow.Pages.viewForumModel
 @{
     string forum = Request.Query["forum"];
+    string srcParam = Request.Query["src"];
     string titolo = "";
     string desc = "";
     const string connData = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + "|DataDirectory|\\forum.mdf;Integrated Security=True";
@@ -28,16 +29,35 @@
     <h2 class="display-4">@titolo</h2>
     <h8 class="display-4">@desc</h8>
     <hr />
+    <form class="form form-control" method="post">
+        <label>Cerca una discussione in questo forum</label>
+        <input type="text" asp-for="param" required />
+        <input type="hidden" asp-for="id" value="@forum" />
+        <input type="submit" />
+    </form>
 
     @{
 
         using (SqlConnection conn = new SqlConnection(connData))
         {
             conn.Open();
-            string query = "SELECT d.d_titolo, d.d_desc, u.u_nickname, d.d_Id FROM discussione AS d, utente AS u WHERE d.f_Id = @forum AND d.u_Id = u.u_Id";
+            string query = "";
+            if (srcParam == null)
+            {
+                query = "SELECT d.d_titolo, d.d_desc, u.u_nickname, d.d_Id FROM discussione AS d, utente AS u WHERE d.f_Id = @forum AND d.u_Id = u.u_Id";
+            }
+            else
+            {
+                query = "SELECT d.d_titolo, d.d_desc, u.u_nickname, d.d_Id FROM discussione AS d, utente AS u WHERE d.f_Id = @forum AND d.u_Id = u.u_Id AND d.d_titolo LIKE @src OR d.d_desc LIKE @src"; // la ricerca non funziona benes
+            }
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
+
                 cmd.Parameters.AddWithValue("@forum", forum);
+                if (srcParam != null) 
+                { 
+                    cmd.Parameters.AddWithValue("@src", srcParam); // fix me!!
+                }
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())

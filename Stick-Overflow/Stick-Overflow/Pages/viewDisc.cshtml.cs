@@ -21,7 +21,7 @@ namespace Stick_Overflow.Pages
             using (SqlConnection conn = new SqlConnection(connData))
             {
                 conn.Open();
-                const string maxQuery = "";
+                const string maxQuery = "SELECT MAX(m_Id) FROM messaggio";
                 using (SqlCommand cmd = new SqlCommand(maxQuery, conn))
                 {
                     object ris = cmd.ExecuteScalar();
@@ -36,7 +36,7 @@ namespace Stick_Overflow.Pages
                 }
 
 
-                const string query = "INSERT INTO messaggio VALUES(@mid, ' ', @testo, CURRENT_TIMESTAMP, @uid, @did)"; // @data da sistemare, se non funziona in sql allora possiamo passare come param una var datetime di c#
+                const string query = "INSERT INTO messaggio(m_Id, m_titolo, m_testo, m_data, u_Id, d_Id) VALUES(@mid, ' ', @testo, CURRENT_TIMESTAMP, @uid, @did)"; // @data da sistemare, se non funziona in sql allora possiamo passare come param una var datetime di c#
                 using(SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@mid", mid);

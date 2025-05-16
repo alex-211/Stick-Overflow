@@ -12,7 +12,7 @@
     using (SqlConnection conn = new SqlConnection(connData))
     {
         conn.Open();
-        const string query = "SELECT d.d_titolo, d.d_desc, u.u_nickname, d.u_Id FROM discussione AS d, utente AS u WHERE d.d_id = @id";
+        const string query = "SELECT d.d_titolo, d.d_desc, u.u_nickname, d.u_Id FROM discussione AS d, utente AS u WHERE d.d_id = @id AND d.u_Id = u.u_Id";
         using (SqlCommand cmd = new SqlCommand(query, conn))
         {
             cmd.Parameters.AddWithValue("@id", disc);
@@ -24,6 +24,8 @@
                     desc = reader[1].ToString();
                     nick = reader[2].ToString();
                     id = reader[3].ToString();
+
+
                 }
             }
         }
@@ -37,11 +39,34 @@
 
     @if (usrId != null)
     {
-        <form class="form form-control">
+        <form class="form form-control" method="post">
             <label>Rispondi</label>
             <input type="text" asp-for="reply" required />
-            <input type="hidden" name="id" value="@id" />
+            <input type="hidden" asp-for="id" value="@disc" />
             <input type="submit" />
         </form>
+    }
+
+    @{
+        using (SqlConnection conn = new SqlConnection(connData))
+        {
+            string query = "SELECT m.m_testo, m.m_data, u.u_nickname FROM messaggio AS m, utente AS u WHERE m.d_Id = @disc AND m.u_Id = u.u_Id";
+            conn.Open();
+
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@disc", disc);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        <div>
+                            <p>il @reader[1], @reader[2] dice:</p>
+                            <p>@reader[0]</p>
+                        </div>
+                    }
+                }
+            }
+        }
     }
 </body>
