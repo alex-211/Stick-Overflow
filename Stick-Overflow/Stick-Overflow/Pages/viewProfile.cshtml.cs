@@ -13,6 +13,12 @@ namespace Stick_Overflow.Pages
 
         [BindProperty]
         public string oldPswd { get; set; }
+
+        [BindProperty]
+        public string pswd { get; set; }
+
+        [BindProperty]
+        public string pswdConf { get; set; }
         public void OnGet()
         {
         }

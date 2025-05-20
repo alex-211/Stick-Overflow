@@ -8,6 +8,7 @@
     string name = "";
     string abilitato = "";
     string email = "";
+    bool profileError = false;
 
     commonMethods cm = new commonMethods();
     try
@@ -18,13 +19,24 @@
     }
     catch
     {
-        <body>Errore nel caricamento del profilo</body>
+        profileError = true;
         return;
     }
 }
 
 <body>
+    @{
+        if (profileError == true)
+        {
 
+        }
+    }
+    <script>
+        function showForm()
+        {
+        document.getElementById("form-modifica").style.display = "block";
+        }
+    </script>
     <h4>@name</h4>
     <!--magari aggiungere pfp o bio?-->
 
@@ -36,10 +48,12 @@
         if (loggedId == profileId)
         {
             // aggiungere bottone per modifica profilo
+
             // che chiama funzione js che mostra un form (già scritto, settato su hidden che js poi renderà visibile)
             <h6>@email</h6>
+            <button onclick="showForm()">Modifica profilo</button>
 
-            <form method="post" name="form-modifica" hidden class="form form-control">
+            <form method="post" id="form-modifica" hidden class="form form-control">
                 <label>Modifica nickname:</label>
                 <input type="text" asp-for="nick" class="form form-control" />
 
@@ -59,14 +73,14 @@
     }
 
     @{
-        const string connData = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + "|DataDirectory|\\forum.mdf;Integrated Security=True";
+        string connData = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + "|DataDirectory|\\forum.mdf;Integrated Security=True";
         using (SqlConnection conn = new SqlConnection(connData))
         {
             conn.Open();
-            const string query = ""; // tutte le discussioni di cui fa parte
+            string query = ""; // tutte le discussioni di cui fa parte
             if (loggedId != null && profileId == null)
             {
-                // query contains logged in user id
+                query = "SELECT m_Id FROM messaggio where u_Id = @id";
             }
             else
             {
@@ -74,7 +88,15 @@
             }
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@id", profileId);
+                if (loggedId != null && profileId == null)
+                {
+                    cmd.Parameters.AddWithValue("@id", loggedId);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@id", profileId);
+                }
+
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
@@ -82,7 +104,7 @@
                         if (reader.FieldCount == 0) // non so se è giusto
                         {
                             <p>L'utente non ha interagito con nessuna discussione</p>
-                            return;
+                            return; // forse non funziona
                         }
                         // 1 = titolo, 0 = id, 2 desc, poi forse count messaggi ?
                         <div>
