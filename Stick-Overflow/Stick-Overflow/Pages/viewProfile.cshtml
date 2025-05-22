@@ -3,7 +3,7 @@
 @model Stick_Overflow.Pages.viewProfileModel
 @{
     string loggedId = HttpContext.Request.Cookies["logged-in-id"] ?? HttpContext.Session.GetString("user-id");
-    string profileId = Request.Query["profile"];
+    string profileId = Request.Query["usr"]; // this is not getting populated for some reason
 
     string name = "";
     string abilitato = "";
@@ -20,7 +20,6 @@
     catch
     {
         profileError = true;
-        return;
     }
 }
 
@@ -77,15 +76,7 @@
         using (SqlConnection conn = new SqlConnection(connData))
         {
             conn.Open();
-            string query = ""; // tutte le discussioni di cui fa parte
-            if (loggedId != null && profileId == null)
-            {
-                query = "SELECT m_Id FROM messaggio where u_Id = @id";
-            }
-            else
-            {
-                // query contains selected user id 
-            }
+            string query = "SELECT m_Id FROM messaggio where u_Id = @id"; // tutte le discussioni di cui fa parte
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 if (loggedId != null && profileId == null)
@@ -104,14 +95,17 @@
                         if (reader.FieldCount == 0) // non so se è giusto
                         {
                             <p>L'utente non ha interagito con nessuna discussione</p>
-                            return; // forse non funziona
+                            ; // forse non funziona
                         }
-                        // 1 = titolo, 0 = id, 2 desc, poi forse count messaggi ?
-                        <div>
-                            <p href="/viewDisc?disc=@reader[0]">@reader[1]</p> // titolo discussione
-                            <!--desc-->
-                            <!--count messaggi oppure l'ultimo-->
-                        </div>
+                        else
+                        {
+                            // 1 = titolo, 0 = id, 2 desc, poi forse count messaggi 
+                            <div>
+                                <p href="/viewDisc?disc=@reader[0]">@reader[0]</p> // titolo discussione // update: per ora solo ID
+                                <!--desc-->
+                                <!--count messaggi oppure l'ultimo-->
+                            </div>
+                        }
                     }
                 }
             }
