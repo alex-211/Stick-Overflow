@@ -19,8 +19,9 @@ namespace Stick_Overflow.Pages
 
         [BindProperty]
         public string pswdConf { get; set; }
-        public void OnGet()
+        public void OnPost()
         {
+            // modifica del profilo sta qui
         }
     }
 }

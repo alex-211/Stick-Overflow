@@ -3,12 +3,13 @@
 @model Stick_Overflow.Pages.viewProfileModel
 @{
     string loggedId = HttpContext.Request.Cookies["logged-in-id"] ?? HttpContext.Session.GetString("user-id");
-    string profileId = Request.Query["usr"]; // this is not getting populated for some reason
+    string profileId = Request.Query["usr"];
 
     string name = "";
     string abilitato = "";
     string email = "";
     bool profileError = false;
+    string exc = "";
 
     commonMethods cm = new commonMethods();
     try
@@ -17,9 +18,10 @@
         abilitato = cm.getUserDetails(profileId)[2];
         email = cm.getUserDetails(profileId)[1];
     }
-    catch
+    catch (Exception ex)
     {
         profileError = true;
+        exc = ex.ToString();
     }
 }
 
@@ -27,16 +29,17 @@
     @{
         if (profileError == true)
         {
-
+            <p>Errore nel caricamento del profilo: @exc</p>
         }
     }
     <script>
         function showForm()
         {
-        document.getElementById("form-modifica").style.display = "block";
+            document.getElementById("form-modifica").style.display = "block";
+            document.getElementById("btn-modifica").style.display = "none";
         }
     </script>
-    <h4>@name</h4>
+    <h4>Profilo di: @name</h4>
     <!--magari aggiungere pfp o bio?-->
 
     @{
@@ -50,9 +53,9 @@
 
             // che chiama funzione js che mostra un form (già scritto, settato su hidden che js poi renderà visibile)
             <h6>@email</h6>
-            <button onclick="showForm()">Modifica profilo</button>
+            <button onclick="showForm()" id="btn-modifica" style="display: block">Modifica profilo</button>
 
-            <form method="post" id="form-modifica" hidden class="form form-control">
+            <form method="post" id="form-modifica" class="form form-control" style="display: none">
                 <label>Modifica nickname:</label>
                 <input type="text" asp-for="nick" class="form form-control" />
 
@@ -67,6 +70,8 @@
 
                 <label>Conferma nuova password</label>
                 <input type="password" asp-for="pswdConf" class="form form-control" />
+
+                <input type="submit" />
             </form>
         }
     }
@@ -92,10 +97,10 @@
                 {
                     if (reader.Read())
                     {
-                        if (reader.FieldCount == 0) // non so se è giusto
+                        if (reader[0] == null) // non so se è giusto //update non mi sembra funzionare // ne ho provate un po' e non funziona
                         {
                             <p>L'utente non ha interagito con nessuna discussione</p>
-                            ; // forse non funziona
+                            // forse non funziona
                         }
                         else
                         {

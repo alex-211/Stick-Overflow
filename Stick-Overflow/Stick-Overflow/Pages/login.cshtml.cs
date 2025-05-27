@@ -50,7 +50,7 @@ namespace Stick_Overflow.Pages
                         object ris = cmd.ExecuteScalar();
                         if (ris == null)
                         {
-                            messaggio = "cacca non posso loggarmi";
+                            messaggio = "Impossibile eseguire il login: ricontrollate credenziali o contattate supporto tecnico";
                             return;
                         }
                         else
