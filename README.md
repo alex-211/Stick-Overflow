@@ -6,7 +6,7 @@ Sito in stile forum usando pagine Razor, dove gli utenti possono registrarsi, lo
 ### Sviluppo
 ![image](https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white) 
 ### Librerie/framework
-![.NET Badge](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=fff&style=flat) ![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=flat-square)
+![.NET Badge](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=fff&style=flat) ![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=flat-square)  [Microsoft Data SqlClient (aka OleDB)](https://www.nuget.org/packages/Microsoft.Data.SqlClient/6.1.0-preview1.25120.4)
 ### Gestione del progetto
 ![GitHub Badge](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=flat-square) Projects
 
