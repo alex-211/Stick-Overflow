@@ -29,17 +29,19 @@ Una volta effettuato il login è possibile modificare il proprio profilo, creare
 Se si è amministratore una pagina dove l'intero database è accessibile e si possono gestire gli utenti (sbannare/bannare), i messaggi (eliminare) e creare e modificare i form.
 
 Le pagine menzionate sopra sono condivise tra utenti loggati e non, e la distinzione delle funzioni avviene tramite i session cookies:
-
+``` cs
     HttpContext.Session.SetString("user-id", Convert.ToString(ris))
+```
 oppure per salvare le credenziali oltre il tempo di scadenza della sessione tramite i cookie classici:
-
+``` cs
     CookieOptions cookie = new CookieOptions();
     cookie.Expires = DateTime.Now.AddDays(30);
     Response.Cookies.Append("logged-in-id", Convert.ToString(ris), cookie);
+``` 
 E poi per recuperarli:
-
+``` cs
     string usrId = HttpContext.Request.Cookies["logged-in-id"] ?? HttpContext.Session.GetString("user-id");
-
+```
 ## Struttura del database
 Il database è tipo relazionale, usa SQL ed ha la seguente struttura:
 ![drawSQL-image-export-2025-06-05](https://github.com/user-attachments/assets/accee88a-0890-4348-8d9b-a7a8c86e4e07)
