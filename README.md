@@ -11,7 +11,17 @@ Sito in stile forum usando pagine Razor, dove gli utenti possono registrarsi, lo
 ![GitHub Badge](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=flat-square) Projects
 
 ## Struttura logica della webapp
-_stuff goes here_
+- Homepage
+- Ricerca forum
+- Visualizzazione forum
+- Visualizzazione discussione
+- Login / Registrazione
+     - Creazione discussioni
+     - Invio messaggi
+     - Admin Panel (solo se utente è admin)
+          - Creazione forum
+          - Ban/unban utenti
+          - Rimozione messaggi
 
 ## Funzioni della webapp
 La homepage contiene tutti i form e una lista delle discussioni con più messaggi nell'ultimo periodo, accessibile da tutti, anche senza login. Inoltre si può visualizzare la pagina di ricerca e tutti i contenuti dei forum e delle discussioni. Infine, sempre senza login è possibile visualizzare i profili altrui.
@@ -31,8 +41,15 @@ E poi per recuperarli:
     string usrId = HttpContext.Request.Cookies["logged-in-id"] ?? HttpContext.Session.GetString("user-id");
 
 ## Struttura del database
-_stuff goes here_
-_menzionare dbms etc_
+Il database è tipo relazionale, usa SQL ed ha la seguente struttura:
+![drawSQL-image-export-2025-06-05](https://github.com/user-attachments/assets/accee88a-0890-4348-8d9b-a7a8c86e4e07)
+Il DBMS utilizzato di default è SQL Server (di Microsoft) ma in verità per cambiare DBMS basta hostare il DB su un sistema separato e cambiare la stringa di connessione
 
-## Hosting su Azure
-_forse?_
+## Hosting
+Non essendo a disposizione delle risorse necessarie per l'hosting non è possibile per me tenere il sito in rete, detto questo, ci sono alcune opzioni:
+1. Hosting gratuito su Azure:
+   Basta fare il deployment del servizio hosting ASP.NET di Azure e eseguire il Publish da Visual Studio
+   Per il DB, basta fare il deployment del servizio DB SQL di azure e caricare il i file necessari tramite CLI/web GUI
+2. Hosting con Docker:
+   Si scrive il Dockerfile contenete i container per web server e DB, puntando alle directory giuste sulla macchina dove si eseguirà il container
+3. Hosting su Windows, utilizzando IIS (Internet Information Services)
